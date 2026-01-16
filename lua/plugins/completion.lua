@@ -47,6 +47,11 @@ return {
         default = { 'lazydev', 'lsp', 'path', 'references', 'git', 'snippets', 'buffer', 'emoji', 'latex' },
         -- default = { 'lazydev', 'lsp', 'path', 'references', 'git', 'snippets', 'emoji', 'latex' },
         providers = {
+          snippets = {
+            name = 'Snippets',
+            score_offset = -10,
+            enabled = false,
+          },
           emoji = {
             module = 'blink-emoji',
             name = 'Emoji',
