@@ -4,6 +4,7 @@ return {
     -- for complete functionality (language features)
     'quarto-dev/quarto-nvim',
     dev = false,
+    ---@module "quarto"
     ---@type QuartoConfig
     opts = {
       lspFeatures = {

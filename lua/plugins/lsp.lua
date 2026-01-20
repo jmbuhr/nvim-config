@@ -8,8 +8,13 @@ return {
         'nvim-treesitter/nvim-treesitter',
       },
     },
+    ---@module "otter"
     ---@type OtterConfig
-    opts = {},
+    opts = {
+      buffers = {
+        write_to_disk = true
+      }
+    },
   },
 
   {
@@ -62,7 +67,8 @@ return {
           ft = 'lua',
           opts = {
             library = {
-              { path = 'luvit-meta/library', words = { 'vim%.uv' } },
+              { path = "${3rd}/luv/library", words = { "vim%.uv" } },
+              { path = "LazyVim", words = { "LazyVim" } },
             },
           },
         },
@@ -71,8 +77,6 @@ return {
       { 'folke/neoconf.nvim', opts = {}, enabled = false },
     },
     config = function()
-      local util = require 'lspconfig.util'
-
       vim.api.nvim_create_autocmd('LspAttach', {
         group = vim.api.nvim_create_augroup('lsp-attach', { clear = true }),
         callback = function(event)
