@@ -2,6 +2,7 @@ return {
 
   {
     'NickvanDyke/opencode.nvim',
+    enabled = false,
     dependencies = {
       -- Recommended for `ask()` and `select()`.
       -- Required for `snacks` provider.
@@ -47,7 +48,7 @@ return {
   {
     'coder/claudecode.nvim',
     dependencies = { 'folke/snacks.nvim' },
-    enabled = true,
+    enabled = false,
     opts = {},
     keys = {
       { '<leader>a', nil, desc = 'AI/Claude Code' },

@@ -15,19 +15,16 @@ require 'config.redir'
 vim.api.nvim_create_autocmd('FileType', {
   -- pattern = { '<filetype>' },
   callback = function(event)
-    local ft = event.match
-    -- test if treesitter is available for this filetype
-    local lang = vim.treesitter.language.get_lang(ft) or ft 
-    local ok = pcall(vim.treesitter.get_parser, event.buf, lang)
+
+    local ok, res = pcall(vim.treesitter.start)
     if not ok then
       return
     end
-    vim.treesitter.start()
-    vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
-    vim.wo[0][0].foldexpr = 'v:lua.vim.treesitter.foldexpr()'
-    vim.wo[0][0].foldmethod = 'expr'
+    -- vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+    -- vim.wo[0][0].foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+    -- vim.wo[0][0].foldmethod = 'expr'
     -- unfold everything by default
-    vim.cmd('normal! zR')
+    -- vim.cmd('normal! zR')
 
   end,
 })
