@@ -1,7 +1,7 @@
 return {
   {
     'jmbuhr/otter.nvim',
-    dev = true,
+    dev = false,
     dependencies = {
       {
         'neovim/nvim-lspconfig',
