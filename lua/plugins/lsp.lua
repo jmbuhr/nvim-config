@@ -10,7 +10,11 @@ return {
     },
     ---@module "otter"
     ---@type OtterConfig
-    opts = { },
+    opts = {
+      buffers = {
+        -- write_to_disk = true,
+      }
+    },
   },
 
   {

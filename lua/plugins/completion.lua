@@ -50,7 +50,7 @@ return {
           snippets = {
             name = 'Snippets',
             score_offset = -10,
-            enabled = false,
+            enabled = true,
           },
           emoji = {
             module = 'blink-emoji',
