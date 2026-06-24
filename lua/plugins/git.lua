@@ -14,7 +14,7 @@ return {
         disable_inlay_hints = true,
         max_computation_time_ms = 5000,
       },
-    }
+    },
   },
 
   -- handy git ui
@@ -26,17 +26,17 @@ return {
       { '<leader>gg', ':Neogit<cr>', desc = 'neo[g]it' },
     },
     opts = {
-        disable_commit_confirmation = true,
-        integrations = {
-          diffview = false,
+      disable_commit_confirmation = true,
+      integrations = {
+        diffview = false,
+      },
+      mappings = {
+        popup = {
+          ['L'] = false,
+          ['H'] = false,
         },
-        mappings = {
-          popup = {
-            ['L'] = false,
-            ['H'] = false,
-          },
-        },
-      }
+      },
+    },
   },
 
   {
@@ -45,22 +45,9 @@ return {
     opts = {},
   },
   {
-    'akinsho/git-conflict.nvim',
-    version = '^2.1.0',
-    init = function()
-      require('git-conflict').setup {
-        default_mappings = false,
-        disable_diagnostics = true,
-      }
-    end,
-    keys = {
-      { '<leader>gco', ':GitConflictChooseOurs<cr>' },
-      { '<leader>gct', ':GitConflictChooseTheirs<cr>' },
-      { '<leader>gcb', ':GitConflictChooseBoth<cr>' },
-      { '<leader>gc0', ':GitConflictChooseNone<cr>' },
-      { ']x', ':GitConflictNextConflict<cr>' },
-      { '[x', ':GitConflictPrevConflict<cr>' },
-    },
+    'spacedentist/resolve.nvim',
+    event = { 'BufReadPre', 'BufNewFile' },
+    opts = {},
   },
   {
     'f-person/git-blame.nvim',
