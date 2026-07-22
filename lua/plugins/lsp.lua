@@ -13,10 +13,14 @@ return {
     opts = {
       buffers = {
         -- write_to_disk = true,
-      }
+      },
     },
   },
-
+  {
+    'GustavEikaas/easy-dotnet.nvim',
+    dependencies = { 'nvim-lua/plenary.nvim', 'folke/snacks.nvim' },
+    opts = {}
+  },
   {
     'neovim/nvim-lspconfig',
     dependencies = {
@@ -38,6 +42,7 @@ return {
             'ts_ls',
             'yamlls',
             'clangd',
+            'omnisharp',
             -- 'ltex',
             -- 'sqlls',
             -- 'emmet_language_server',
@@ -67,8 +72,8 @@ return {
           ft = 'lua',
           opts = {
             library = {
-              { path = "${3rd}/luv/library", words = { "vim%.uv" } },
-              { path = "LazyVim", words = { "LazyVim" } },
+              { path = '${3rd}/luv/library', words = { 'vim%.uv' } },
+              { path = 'LazyVim', words = { 'LazyVim' } },
             },
           },
         },
@@ -239,8 +244,8 @@ return {
             language = 'en-US',
             markdown = {
               nodes = {
-                CodeBlock = "ignore",
-                FencedCodeBlock = "ignore",
+                CodeBlock = 'ignore',
+                FencedCodeBlock = 'ignore',
               },
             },
             additionalRules = {
@@ -248,8 +253,14 @@ return {
               motherTongue = 'de-DE',
             },
             disabledRules = {
-              ['en-US'] = { 'FILE_EXTENSIONS_CASE', 'COMMA_PARENTHESIS_WHITESPACE', 'MORFOLOGIK_RULE_EN_US', 'WHITESPACE_RULE', 'UPPERCASE_SENTENCE_START' },
-            }
+              ['en-US'] = {
+                'FILE_EXTENSIONS_CASE',
+                'COMMA_PARENTHESIS_WHITESPACE',
+                'MORFOLOGIK_RULE_EN_US',
+                'WHITESPACE_RULE',
+                'UPPERCASE_SENTENCE_START',
+              },
+            },
           },
         },
       }
@@ -266,6 +277,7 @@ return {
       vim.lsp.enable 'ts_ls'
       vim.lsp.enable 'yamlls'
       vim.lsp.enable 'clangd'
+      vim.lsp.enable 'omnisharp'
       -- vim.lsp.enable 'ltex'
       -- vim.lsp.enable 'marksman'
       -- vim.lsp.enable 'sqlls'
@@ -280,7 +292,6 @@ return {
       -- android development
       vim.lsp.enable 'kotlin_language_server'
       vim.lsp.enable 'jdtls'
-
     end,
   },
 }
