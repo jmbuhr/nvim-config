@@ -419,6 +419,8 @@ wk.add({
     { '<leader>gc', ':GitConflictRefresh<cr>', desc = '[c]onflict' },
     { '<leader>gd', group = '[d]iff' },
     { '<leader>gs', ':Gitsigns<cr>', desc = 'git [s]igns' },
+    { ']g', ':Gitsigns next_hunk<cr>', desc = 'next [g]it hunk' },
+    { '[g', ':Gitsigns prev_hunk<cr>', desc = 'prev [g]it hunk' },
     {
       '<leader>gwc',
       ":lua require('telescope').extensions.git_worktree.create_git_worktree()<cr>",
