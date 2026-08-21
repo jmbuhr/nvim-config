@@ -43,6 +43,7 @@ return {
             'yamlls',
             'clangd',
             'omnisharp',
+            'jsonls',
             -- 'ltex',
             -- 'sqlls',
             -- 'emmet_language_server',
