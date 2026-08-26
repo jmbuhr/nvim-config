@@ -6,6 +6,9 @@
 -- vim.treesitter.language.add('quarto_markdown_inline', { path = "/usr/local/lib/libtree-sitter-markdown-inline.so" })
 -- vim.treesitter.language.register('quarto_markdown', { 'quarto', 'rmarkdown' })
 
+vim.treesitter.language.add('qmd', { path = "/home/jannik/projects/q2/crates/tree-sitter-qmd/tree-sitter-qmd/qmd.so" })
+vim.treesitter.language.register('qmd', { 'quarto', 'rmarkdown' })
+
 require 'config.global'
 require 'config.lazy'
 require 'config.autocommands'

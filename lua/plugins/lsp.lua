@@ -18,6 +18,7 @@ return {
   },
   {
     'GustavEikaas/easy-dotnet.nvim',
+    enabled = false,
     dependencies = { 'nvim-lua/plenary.nvim', 'folke/snacks.nvim' },
     opts = {}
   },
