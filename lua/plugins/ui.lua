@@ -43,7 +43,19 @@ return {
     config = function()
       local telescope = require 'telescope'
       local actions = require 'telescope.actions'
+      local action_state = require 'telescope.actions.state'
       local previewers = require 'telescope.previewers'
+
+      --- Open the selected entry with the system's default application
+      local function open_with_system(prompt_bufnr)
+        local entry = action_state.get_selected_entry()
+        actions.close(prompt_bufnr)
+        local path = entry and (entry.path or entry.filename or entry.value)
+        if path then
+          vim.ui.open(path)
+        end
+      end
+
       local new_maker = function(filepath, bufnr, opts)
         opts = opts or {}
         filepath = vim.fn.expand(filepath)
@@ -114,6 +126,7 @@ return {
               ['<esc>'] = actions.close,
               ['<c-j>'] = actions.move_selection_next,
               ['<c-k>'] = actions.move_selection_previous,
+              ['<c-o>'] = { open_with_system, type = 'action', opts = { desc = 'open with system app' } },
             },
           },
         },

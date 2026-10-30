@@ -411,6 +411,7 @@ wk.add({
     { '<leader>fl', '<cmd>Telescope loclist<cr>', desc = '[l]oclist' },
     { '<leader>fm', '<cmd>Telescope marks<cr>', desc = '[m]arks' },
     { '<leader>fq', '<cmd>Telescope quickfix<cr>', desc = '[q]uickfix' },
+    { '<leader>fs', '<cmd>Telescope git_status<cr>', desc = 'git [s]tatus (changed files)' },
     { '<leader>g', group = '[g]it' },
     { '<leader>gb', group = '[b]lame' },
     { '<leader>gbb', ':GitBlameToggle<cr>', desc = '[b]lame toggle virtual text' },
